@@ -21,4 +21,10 @@ export default class HelloBinding extends LightningElement {
     get uppercasedFullName() {
         return `${this.firstName} ${this.lastName}`.toUpperCase();
     }
+
+    areDetailsVisible = false;
+
+    handleChangeB(event) {
+        this.areDetailsVisible = event.target.checked;
+    }
 }
