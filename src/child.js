@@ -1,9 +1,9 @@
-import { LightningElement, api } from "lwc";
+import { LightningElement } from 'lwc';
 
-/**
- * Show an item
- */
-export default class Child extends LightningElement {
-  @api
-  label = "";
+export default class HelloBinding extends LightningElement {
+    greeting = 'World';
+
+    handleChange(event) {
+        this.greeting = event.target.value;
+    }
 }
