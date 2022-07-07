@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,api} from 'lwc';
 import templateOne from './templateOne.html';
 import templateTwo from './templateTwo.html';
 
@@ -6,6 +6,44 @@ export default class HelloBinding extends LightningElement {
 
 templateOne = true;
 
+isDarkMode = false;
+
+@api message = 'It looks as if duplicates exist ...';
+
+@api theme = '';
+
+
+handleChangeC(event) {
+        this.isDarkMode = event.target.checked;
+        this.theme='dark';
+        if(this.isDarkMode=== false) {
+          this.theme='light';  
+        }
+}
+
+  get scopedNotificationClass() {
+    let className = 'slds-scoped-notification slds-media slds-media_center'; 
+   
+   
+    if (this.theme ==='light') {
+      className += ' slds-scoped-notification_light';
+    }
+   
+    if (this.theme === 'dark') {
+      className += ' slds-scoped-notification_dark';
+    }
+   
+    return className; 
+  }
+get iconVariant() {
+  let iconVariant = null;
+  
+  if (this.theme == 'dark') {
+    iconVariant = 'inverse';
+  }
+  
+  return iconVariant;
+}
     render() {
        return this.templateOne ? templateOne : templateTwo;
 }
@@ -60,4 +98,5 @@ templateOne = true;
     handleChangeB(event) {
         this.areDetailsVisible = event.target.checked;
     }
+
 }

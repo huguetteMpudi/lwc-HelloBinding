@@ -13,18 +13,17 @@
   <div class="slds-box">
     <p>This is a regular-sized box.</p>
   </div>
-  <br/>
-  <div class="slds-box slds-box_small">
+
+  <div class="slds-box slds-box_small slds-m-top_x-small">
     <p>This is a small box.</p>
   </div>
-  <br/>
-  <div class="slds-box slds-box_x-small">
+
+  <div class="slds-box slds-box_x-small slds-m-top_x-small">
     <p>This is an extra-small box.</p>
   </div>
-  <br/>
-  <div class="slds-border_top">This should have a top border.</div>
-  <br/>
-  <div class="slds-clearfix">
+  <div class="slds-border_top slds-m-top_x-small">This should have a top border.</div>
+
+  <div class="slds-clearfix slds-m-top_x-small">
     <div class="slds-float_left">
       <p>Float Left</p>
     </div>
@@ -32,8 +31,8 @@
       <p>Float Right</p>
     </div>
   </div>
-  <br/>
-  <div class="slds-grid slds-gutters bg">
+
+  <div class="slds-grid slds-gutters bg slds-m-top_x-small">
     <div class="slds-col">
       <span>1</span>
     </div>
@@ -44,8 +43,8 @@
       <span>3</span>
     </div>
   </div>
-  <br/>
-  <div class="slds-grid slds-gutters bg">
+
+  <div class="slds-grid slds-gutters bg slds-m-top_x-small">
     <div class="slds-col slds-size_2-of-3">
       <span>1</span>
     </div>
@@ -54,13 +53,30 @@
     </div>
   </div>
   <div>
-    <br/>
-    <div class="slds-card">
+
+    <div class="slds-card slds-m-top_x-small">
       <div class="slds-p-around_medium">Card One</div>
     </div>
     <div class="slds-card">
       <div class="slds-p-around_medium">Card Two</div>
     </div>
   </div>
+  <button class="slds-button slds-button_brand slds-m-top_x-small">Submit</button></div>
+  <br/>
+  <lightning-card title="Hello">
+    <lightning-button label="New" slot="actions"></lightning-button>
+    <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+    <p slot="footer">Card Footer</p>
+  </lightning-card>
 
+  <div class={scopedNotificationClass} role="status">
+    <div class="slds-media__figure">
+      <lightning-icon icon-name="utility:info" alternative-text="information" variant={iconVariant} size="small">
+      </lightning-icon>
+    </div>
+    <div class="slds-media__body">
+      <p>{message}</p>
+      <lightning-input type="checkbox" label="Dark Mode" onchange={handleChangeC}></lightning-input>
+    </div>
+  </div>
 </template>
