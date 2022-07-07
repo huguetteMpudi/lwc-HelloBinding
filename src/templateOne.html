@@ -1,0 +1,51 @@
+<template>
+  <p>Hello, {greeting}!</p>
+    <lightning-input label="Name" value={greeting} onchange={handleChangeA}></lightning-input>
+
+
+    <div class="slds-m-around_medium">
+        <lightning-input name='firstName' label="First Name" onchange={handleChange}></lightning-input>
+        <lightning-input name='lastName' label="Last Name" onchange={handleChange}></lightning-input>
+        <p class="slds-m-top_medium">Uppercased Full Name: {uppercasedFullName}</p>
+    </div>
+
+    <lightning-card title="If/else Statement" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <lightning-input type="checkbox" label="Show details" onchange={handleChangeB}></lightning-input>
+            <template if:true={areDetailsVisible}>
+                <div class="slds-m-vertical_medium">
+                    These are the details!
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+    <lightning-card title="For loop" icon-name="custom:custom14">
+        
+            <ul class="slds-m-around_medium">
+                <template for:each={contacts} for:item="contact">
+                    <li key={contact.Id}>
+                        {contact.Name}, {contact.Title}
+                    </li>
+                </template>
+            </ul>
+       
+    </lightning-card>
+
+    <lightning-card title="Iterator/ value" icon-name="custom:custom14">
+        <ul class="slds-m-around_medium">
+            <template iterator:c={contacts}>
+                <li key={c.value.Id}>
+                    <div if:true={c.first} class="list-first"></div>
+                    {c.value.Name}, {c.value.Title}
+                    <div if:true={c.last} class="list-last"></div>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+<br/>
+        <p class="margin-vertical-small">
+            <lightning-button variant="brand" label="Switch" title="Switch"
+                onclick={switchTemplate}> </lightning-button>
+        </p>
+  
+</template>
