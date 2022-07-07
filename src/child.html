@@ -1,5 +1,15 @@
 <template>
-	<div class="slds-m-horizontal_xx-small slds-m-bottom_x-small">
-		<slot name="icon"></slot> <span class="slds-p-left_small">{label}</span>
-	</div>
+    
+
+    <lightning-card title="Template One">
+        <div>
+            This is template one.
+        </div>
+        <p class="margin-vertical-small">
+            <lightning-button label="Switch Templates" 
+                onclick={switchTemplate}>
+            </lightning-button> 
+        </p>
+    </lightning-card>
+
 </template>
